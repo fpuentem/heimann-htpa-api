@@ -19,7 +19,7 @@ dev = HTPA(0x1A)
 
 @app.route('/home')
 def home():
-    return "<h1>Face Enrolling - VisionTech</h1>"
+    return "<h1>People detection - Poli-USP</h1>"
 
 
 
