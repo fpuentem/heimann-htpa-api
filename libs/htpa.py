@@ -6,7 +6,7 @@ import struct
 import numpy as np
 # import cv2 as cv
 
-import libs.Table
+import libs.Table as Table
 from libs.i2chtpa import *
 
 
