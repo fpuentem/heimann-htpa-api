@@ -32,9 +32,7 @@ def get_raw_data():
     now = datetime.now() # current date and time
     date_time = now.strftime("%m/%d/%Y %H:%M:%S")
 
-    data = {"raw-data" : frame, "amb-temp" : temp,
-            "ts": date_time}
-
+    data = {"raw-data" : frame, "ts": date_time}
     
     response = app.response_class(
         response = json.dumps(data),
@@ -43,6 +41,25 @@ def get_raw_data():
     )
     return response
 
+@app.route('/raw-temperature', methods=['GET'])
+# 
+def get_raw_temperature():
+    temp, fr = dev.get_frame_temperature()
+    frame = fr.tolist() 
+
+    # time stamp 
+    now = datetime.now() # current date and time
+    date_time = now.strftime("%m/%d/%Y %H:%M:%S")
+
+    data = {"raw-temperature" : frame, "amb-temp" : temp,
+            "ts": date_time}
+    
+    response = app.response_class(
+        response = json.dumps(data),
+        status = 200,
+        mimetype = 'application/json'
+    )
+    return response
 
 if __name__ == '__main__':
     # defining server ip address and port
