@@ -1,11 +1,12 @@
-import numpy as np
-import sys
+# import sys
 import time
 import copy
-import Table
 import struct
+
+import numpy as np
 import cv2 as cv
 
+import Table
 from i2chtpa import *
 
 

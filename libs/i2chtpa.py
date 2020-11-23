@@ -1,7 +1,7 @@
 
 from periphery import I2C
 import numpy as np
-import sys
+# import sys
 import time
 
 class I2Cdriver():
