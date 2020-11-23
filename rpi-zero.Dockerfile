@@ -1,4 +1,4 @@
-FROM arm32v6/python:3
+FROM resin/rpi-raspbian:latest
 
 # Installing open-cv dependencies
 RUN apt-get -y update && apt-get -y upgrade \
@@ -18,11 +18,11 @@ RUN apt-get -y update && apt-get -y upgrade \
         libxrender-dev 
 
 # Installing open-cv and other 
-RUN pip3 install scipy \
-                cython \
-                keras \
-                opencv-python \
-                scikit-image 
+# RUN pip3 install scipy \
+#                 cython \
+#                 keras \
+#                 opencv-python \
+#                 scikit-image 
 
 # Installing Flask and python-periphery
 COPY ./requirements.txt /
