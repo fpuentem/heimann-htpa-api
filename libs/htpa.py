@@ -6,8 +6,8 @@ import struct
 import numpy as np
 # import cv2 as cv
 
-import Table
-from i2chtpa import *
+import libs.Table
+from libs.i2chtpa import *
 
 
 i2cdriver = I2Cdriver()
