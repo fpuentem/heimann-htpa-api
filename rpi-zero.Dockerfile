@@ -2,17 +2,17 @@ FROM balenalib/rpi-raspbian:latest
 
 
 # Installing numpy and its dependecies
-RUN apt-get update && \
-    apt-get install -y \
+RUN apt update && \
+    apt install -y \
         build-essential \
         make \
         gcc \
-    && apt-get remove -y --purge make gcc build-essential \
-    && apt-get autoremove -y \
+    && apt remove -y --purge make gcc build-essential \
+    && apt autoremove -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Installing Flask and python-periphery
-RUN apt-get install -y --fix-missing \
+RUN apt install -y --fix-missing \
 	# python3-matplotlib \
 	python3-pip \
 	# python3-scipy \
