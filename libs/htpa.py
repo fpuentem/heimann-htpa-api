@@ -4,7 +4,7 @@ import copy
 import struct
 
 import numpy as np
-import cv2 as cv
+# import cv2 as cv
 
 import Table
 from i2chtpa import *
@@ -480,7 +480,7 @@ class HTPA:
 
 		im = np.flip(im, 0)
 		# Rotate
-		im = cv.rotate(im, cv.ROTATE_90_CLOCKWISE)
+		# im = cv.rotate(im, cv.ROTATE_90_CLOCKWISE)
 		return im
 		
 	def get_frame_temperature(self):
