@@ -501,7 +501,9 @@ class HTPA:
 			for j in range(32):
 				temp_obj_array[i][j] = self.calculate_temperature_object(temp_env, im[i][j])
 
-		return temp_obj_array
+		# Transform to celcius
+		temp_obj_array_celcius = self.convert_to_celcius(temp_obj_array)
+		return temp_env, temp_obj_array_celcius
 
 	def calculate_temperature_object(self, TAmb, val):
 		# first check the position in x-axis of table
