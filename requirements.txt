@@ -1,0 +1,2 @@
+Flask==1.1.1
+python-periphery==2.1.1 
