@@ -21,6 +21,27 @@ dev = HTPA(0x1A)
 def home():
     return "<h1>People detection - Poli-USP</h1>"
 
+@app.route('/raw-data', methods=['GET'])
+# 
+def get_raw_data():
+    fr = dev.get_frame()
+    frame = fr.tolist()
+    temp = 25.5 
+
+    # time stamp 
+    now = datetime.now() # current date and time
+    date_time = now.strftime("%m/%d/%Y %H:%M:%S")
+
+    data = {"raw-data" : frame, "amb-temp" : temp,
+            "ts": date_time}
+
+    
+    response = app.response_class(
+        response = json.dumps(data),
+        status = 200,
+        mimetype = 'application/json'
+    )
+    return response
 
 
 if __name__ == '__main__':
