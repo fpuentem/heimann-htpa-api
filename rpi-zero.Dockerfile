@@ -7,16 +7,15 @@ RUN apt-get update && \
         build-essential \
         make \
         gcc \
-    && pip install -r requirements.txt \
     && apt-get remove -y --purge make gcc build-essential \
     && apt-get autoremove -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Installing Flask and python-periphery
 RUN apt-get install -y --fix-missing \
-	python3-matplotlib \
+	# python3-matplotlib \
 	python3-pip \
-	python3-scipy \
+	# python3-scipy \
 	python3-wget
     
 COPY ./requirements.txt /
