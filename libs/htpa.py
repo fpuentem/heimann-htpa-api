@@ -478,7 +478,7 @@ class HTPA:
 		im = self.sensitivity_compensation(im)
 		im = im + 1024*np.ones((32,32))
 
-		im = np.flip(im, 0)
+		# im = np.flip(im, 0)
 		# Rotate
 		# im = cv.rotate(im, cv.ROTATE_90_CLOCKWISE)
 		return im
@@ -490,7 +490,7 @@ class HTPA:
 		im = self.vdd_compensation(im, ptat)
 		im = self.sensitivity_compensation(im)
 		im = im + 1024*np.ones((32,32))
-		im = np.flip(im, 0)
+		# im = np.flip(im, 0)
 		temp_env = self.ambient_temperature(ptat)
 		
 		# Temperature
