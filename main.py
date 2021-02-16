@@ -19,7 +19,7 @@ dev = HTPA(0x1A)
 
 @app.route('/home')
 def home():
-    return "<h1>People detection - Poli-USP</h1>"
+    return "<h1>Thermal measure HTPA - Visiontech</h1>"
 
 @app.route('/raw-data', methods=['GET'])
 # 
@@ -41,7 +41,7 @@ def get_raw_data():
     )
     return response
 
-@app.route('/raw-temperature', methods=['GET'])
+@app.route('/temperature', methods=['GET'])
 # 
 def get_raw_temperature():
     temp, fr = dev.get_frame_temperature()
@@ -63,4 +63,4 @@ def get_raw_temperature():
 
 if __name__ == '__main__':
     # defining server ip address and port
-    app.run(host='0.0.0.0',port='5000', debug=True)
+    app.run(host='0.0.0.0',port='5050', debug=True)
