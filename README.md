@@ -8,14 +8,14 @@ REST API that handle the driver of HTPA 32x32 thermophile array sensor [https://
 ** As sensor sensor device we use HTPA 32x32 Thermopile Array(I2C protocol).
 
 ### Software 
-You should have [Docker](https://docs.docker.com/get-docker/).
+You should have [Docker](https://docs.docker.com/get-docker/) and [post-install](https://docs.docker.com/engine/install/linux-postinstall/) steps.
 
 ## Usage
 ### Creating work directory
 All the scripts and repositories must be downloaded in a common directory.
 ```bash
-mkdir -p $HOME/projects/vt-projects
-cd $HOME/projects/vt-projects
+mkdir -p $HOME/projects/
+cd $HOME/projects/
 ```
 
 ### Getting git repository
@@ -34,7 +34,7 @@ docker build -f jetson.Dockerfile -t "vt/heimann-api:latest-jetson-xavier" .
 ### Run Docker container
 * Make sure that the HTPA sensor is connected physically to correct i2c bus with [i2cdetect](https://manpages.debian.org/unstable/i2c-tools/i2cdetect.8.en.html) tool.
 ```bash
-docker run -it --device /dev/i2c-1:/dev/i2c-1 --runtime nvidia -p 0.0.0.0:5050:5050 -v "$PWD":/repo vt/heimann-api:latest-jetson-xavier
+docker run -it --device /dev/i2c-1:/dev/i2c-1 --runtime nvidia -p 0.0.0.0:5050:5050 -d vt/heimann-api:latest-jetson-xavier
 ```
 ### API usage
 After you run the software on your Jetson, you can use the exposed API to get temperature data.
